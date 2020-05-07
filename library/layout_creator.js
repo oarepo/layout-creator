@@ -8,6 +8,19 @@ class SchemaToLayout {
   }
 
   convert (path, schema) {
+    const converted = this.convertInternal(schema, path)
+    if (!converted) {
+      return converted
+    } return {
+      ...converted,
+      ...schema.layout || {}
+    }
+  }
+
+  convertInternal (schema, path) {
+    if (schema.layout && schema.layout.hide) {
+      return null
+    }
     let type = schema.type
     const id = schema.$id
     if (id !== undefined) {
@@ -48,6 +61,9 @@ class SchemaToLayout {
   }
 
   convertArr (path, schema) {
+    if (schema.layout && schema.layout.hide) {
+      return null
+    }
     if (Array.isArray(schema.items)) {
       const arrayChildren = this.convertArrItems(schema.items)
       return {
@@ -86,14 +102,14 @@ class SchemaToLayout {
         const val = item[k]
         return this.convert(k, val)
       })
-    }).flat()
+    }).flat().filter(k => k !== null)
   }
 
   convertObjProps (props) {
     return Object.getOwnPropertyNames(props).filter(k => !k.startsWith('__')).map(k => {
       const val = props[k]
       return this.convert(k, val)
-    })
+    }).filter(k => k !== null)
   }
 }
 
