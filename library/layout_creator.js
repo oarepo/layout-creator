@@ -28,16 +28,22 @@ class SchemaToLayout {
         type = id.split('#')[1]
       }
     }
-    if (this.typeLayouts[type] !== undefined) {
-      return this.typeLayouts[type]
-    }
-    if (schema.type === 'object') {
-      return this.convertObj(path, schema)
-    } else if (schema.type === 'array') {
-      return this.convertArr(path, schema)
+    let ret = {}
+    if (type === 'object') {
+      ret = this.convertObj(path, schema)
+    } else if (type === 'array') {
+      ret = this.convertArr(path, schema)
     } else {
-      return this.convertStr(path)
+      ret = this.convertStr(path)
     }
+    const typeLayouts = this.typeLayouts
+    if (typeLayouts[type] !== undefined) {
+      if (typeLayouts[type].hide) {
+        return null
+      }
+      ret = { ...ret, ...typeLayouts[type] }
+    }
+    return ret
   }
 
   convertObj (path, schema) {
