@@ -4,7 +4,7 @@ import SimpleSchemaDemo from '../components/SimpleSchemaDemo'
 import ComplexSchemaDemo from '../components/ComplexSchemaDemo'
 import ArraySchemaDemo from '../components/ArraySchemaDemo'
 import ObjectSchemaDemo from '../components/ObjectSchemaDemo'
-import TestLayout from '../components/TestLayout'
+import TypeLayoutsDemo from '../components/TypeLayoutsDemo'
 
 Vue.use(VueRouter)
 
@@ -30,14 +30,14 @@ const routes = [
     component: ArraySchemaDemo
   },
   {
+    path: '/type-layouts-demo',
+    name: 'type-layouts-demo',
+    component: TypeLayoutsDemo
+  },
+  {
     path: '/object-schema-demo',
     name: 'object-schema-demo',
     component: ObjectSchemaDemo
-  },
-  {
-    path: '/test-layout',
-    name: 'test-layout',
-    component: TestLayout
   }
 ]
 

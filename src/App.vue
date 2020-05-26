@@ -32,16 +32,16 @@
                     q-icon(name='list')
                   q-item-section
                     q-item-label Object schema
+                q-item(clickable='' :to="{name: 'type-layouts-demo'}")
+                  q-item-section(avatar='')
+                    q-icon(name='list')
+                  q-item-section
+                    q-item-label Custom type layout
                 q-item(clickable='' :to="{name: 'complex-schema-demo'}")
                   q-item-section(avatar='')
                     q-icon(name='list')
                   q-item-section
                     q-item-label Complex schema
-                q-item(clickable='' :to="{name: 'test-layout'}")
-                  q-item-section(avatar='')
-                    q-icon(name='list')
-                  q-item-section
-                    q-item-label test
     q-page-container
       q-page.q-ma-lg
         router-view(:displaySchema="displaySchema")

@@ -4,8 +4,8 @@ import install from '@oarepo/data-editor-jsonschema'
 import DataEditor from '@oarepo/data-editor'
 import DataRenderer from '@oarepo/data-renderer'
 import SimpleSchemaDemo from '../../src/components/SimpleSchemaDemo'
-// // eslint-disable-next-line camelcase
-// import { html_beautify } from 'js-beautify'
+// eslint-disable-next-line camelcase
+import { html_beautify } from 'js-beautify'
 import '../../src/quasar'
 import ArraySchemaDemo from '../../src/components/ArraySchemaDemo'
 import ObjectSchemaDemo from '../../src/components/ObjectSchemaDemo'
@@ -18,22 +18,22 @@ describe('data editor jsonschema components', () => {
     localVue.use(DataRenderer)
 
     const wrapper = mount(SimpleSchemaDemo, { localVue })
-    expect(wrapper.html()).to.include('"children": [\n' +
+    console.log(html_beautify(wrapper.html()))
+    expect(wrapper.html()).to.include('{\n' +
+      '  "prop": "object",\n' +
+      '  "children": [\n' +
       '    {\n' +
-      '      "prop": "object",\n' +
-      '      "children": [\n' +
-      '        {\n' +
-      '          "prop": "firstName"\n' +
-      '        },\n' +
-      '        {\n' +
-      '          "prop": "lastName"\n' +
-      '        },\n' +
-      '        {\n' +
-      '          "prop": "age"\n' +
-      '        }\n' +
-      '      ]\n' +
+      '      "prop": "lastName",\n' +
+      '      "label": {\n' +
+      '        "label": "p"\n' +
+      '      }\n' +
+      '    },\n' +
+      '    {\n' +
+      '      "prop": "age"\n' +
       '    }\n' +
-      '  ]')
+      '  ],\n' +
+      '  "showEmpty": true\n' +
+      '}')
   })
 
   it('renders layout for array json schema', async () => {
@@ -44,17 +44,16 @@ describe('data editor jsonschema components', () => {
 
     const wrapper = mount(ArraySchemaDemo, { localVue })
     console.log(wrapper.html())
-    expect(wrapper.html()).to.include('"children": [\n' +
+    expect(wrapper.html()).to.include('{\n' +
+      '  "prop": "object",\n' +
+      '  "children": [\n' +
       '    {\n' +
-      '      "prop": "object",\n' +
-      '      "children": [\n' +
-      '        {\n' +
-      '          "prop": "phone",\n' +
-      '          "item": {}\n' +
-      '        }\n' +
-      '      ]\n' +
+      '      "prop": "phone",\n' +
+      '      "item": {}\n' +
       '    }\n' +
-      '  ]')
+      '  ],\n' +
+      '  "showEmpty": true\n' +
+      '}')
   })
 
   it('renders layout for object json schema', async () => {
@@ -65,20 +64,19 @@ describe('data editor jsonschema components', () => {
 
     const wrapper = mount(ObjectSchemaDemo, { localVue })
     console.log(wrapper.html())
-    expect(wrapper.html()).to.include('"children": [\n' +
+    expect(wrapper.html()).to.include('{\n' +
+      '  "prop": "object",\n' +
+      '  "children": [\n' +
       '    {\n' +
-      '      "prop": "object",\n' +
+      '      "prop": "contact",\n' +
       '      "children": [\n' +
       '        {\n' +
-      '          "prop": "contact",\n' +
-      '          "children": [\n' +
-      '            {\n' +
-      '              "prop": "phone"\n' +
-      '            }\n' +
-      '          ]\n' +
+      '          "prop": "phone"\n' +
       '        }\n' +
       '      ]\n' +
       '    }\n' +
-      '  ]')
+      '  ],\n' +
+      '  "showEmpty": true\n' +
+      '}')
   })
 })

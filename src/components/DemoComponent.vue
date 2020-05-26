@@ -22,6 +22,10 @@ export default {
   props: {
     record: Object,
     jsonSchema: Object,
+    typeLayouts: {
+      type: Object,
+      default: () => ({})
+    },
     options: {
       type: Object,
       default: () => ({})
@@ -43,7 +47,7 @@ export default {
       return this.pathLayouts || {}
     },
     layout () {
-      return schemaToLayout(this.jsonSchema)
+      return schemaToLayout(this.jsonSchema, this.typeLayouts)
     },
     currentSchema () {
       return this.displaySchema
