@@ -4,7 +4,7 @@
     .row
       div(:class="{'col-4':!onlyData, 'col-12':onlyData}")
         h6.q-mb-lg.q-mt-lg JSON schema data editor component
-        data-editor-component(:record="record" :layout="layout" :path-layouts="pathLayouts" :options="options" :editor-components="editorComponents")
+        data-editor(:record="record" :layout="layout" :path-layouts="pathLayouts" :options="options" :editor-components="editorComponents")
       .col-8.row(v-if="!onlyData")
         .col-8
           h6 JSON Schema

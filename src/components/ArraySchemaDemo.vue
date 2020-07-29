@@ -43,11 +43,13 @@ export default {
           Vue.set(context, prop, value)
         }
       }
-      console.log('submit', context, prop, value, op, context[prop])
       if (op === 'replace') {
-        context[prop] = value
+        if (Array.isArray(context)) {
+          context.splice(prop, 1, value)
+        } else {
+          Vue.set(context, prop, value)
+        }
       }
-      console.log('submit', context, prop, value, op, context[prop])
       if (op === 'remove') {
         if (Array.isArray(context)) {
           context.splice(prop, 1)
@@ -56,9 +58,7 @@ export default {
         }
       }
     },
-    cancel (props) {
-      console.log('cancelling')
-    }
+    cancel () {}
   }
 }
 </script>
