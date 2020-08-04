@@ -13,7 +13,7 @@ export default {
     return {
       record: {},
       options: {
-        schema: 'table',
+        schema: 'block',
         extraProps: {
           submit: this.submit,
           cancel: this.cancel
@@ -28,14 +28,14 @@ export default {
         properties: {
           firstName: {
             type: 'string',
-            description: "The person's first name.",
+            description: 'The person\'s first name.',
             layout: {
               hide: true
             }
           },
           lastName: {
             type: 'string',
-            description: "The person's last name.",
+            description: 'The person\'s last name.',
             layout: {
               label: {
                 label: 'p'
@@ -46,6 +46,37 @@ export default {
             description: 'Age in years which must be equal to or greater than zero.',
             type: 'integer',
             minimum: 0
+          },
+          skills: {
+            description: 'Various skills.',
+            type: 'object',
+            additionalProperties: {
+              type: 'object',
+              properties: {
+                properties: {
+                  experience: {
+                    type: 'string'
+                  },
+                  proficiency: {
+                    type: 'string'
+                  }
+                }
+              }
+            },
+            layout: {
+              additionalProps: {
+                defaultValue: {
+                  python: {
+                    experience: ' 3 months',
+                    proficiency: 'beginner'
+                  }
+                }
+              },
+              children:
+                [{
+                  prop: 'python'
+                }]
+            }
           }
         }
       }
@@ -75,7 +106,8 @@ export default {
         }
       }
     },
-    cancel () {}
+    cancel () {
+    }
   }
 }
 </script>

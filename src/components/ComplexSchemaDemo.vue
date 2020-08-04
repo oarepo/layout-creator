@@ -53,6 +53,15 @@ export default {
                 }
               },
               required: ['id', 'name', 'functions']
+            },
+            layout: {
+              additionalProps: {
+                defaultValue: {
+                  id: 1,
+                  name: 'Mary Black',
+                  functions: ['singer']
+                }
+              }
             }
           }
         },
