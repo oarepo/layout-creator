@@ -7,6 +7,7 @@ module.exports = {
       rtlSupport: false
     }
   },
+  publicPath: '/layout-creator/',
   configureWebpack (cfg) {
     cfg.resolve.alias['@oarepo/data-editor-jsonschema'] =
       path.join(__dirname, 'library/index.js')
