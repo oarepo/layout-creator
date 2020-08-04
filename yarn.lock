@@ -930,10 +930,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@oarepo/data-editor@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@oarepo/data-editor/-/data-editor-3.1.1.tgz#a3c8a7e9f7e8e81decbe87341de9ef4fcc34850b"
-  integrity sha512-3fWYmMbR6qMMs18rBKrxte0oPP2I/8Wvjd7KjUU5NgHaNzttY0Dg4HoOYY70Z/dg7ph4f1zhDr9qQNTmqmIxdA==
+"@oarepo/data-editor@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@oarepo/data-editor/-/data-editor-3.1.2.tgz#4354787f0bc5f3a54daf2e7b8c7ed9a48129609e"
+  integrity sha512-aDMPghSH6pmeKwy49BjLdqGUZiIMju4LBiC8Co5R1/kI+fadfl3Yq1SGJ8b30uL70Nf+UoJcREP+cYQ0mVlEOw==
 
 "@oarepo/data-renderer@^2.4.6":
   version "2.4.6"

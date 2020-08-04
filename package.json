@@ -20,7 +20,7 @@
     "vue-runtime-helpers": "^1.1.2"
   },
   "devDependencies": {
-    "@oarepo/data-editor": "^3.1.1",
+    "@oarepo/data-editor": "^3.1.2",
     "@oarepo/data-renderer": "^2.4.6",
     "@vue/cli-plugin-babel": "^4.2.0",
     "@vue/cli-plugin-eslint": "^4.2.0",
