@@ -1,6 +1,6 @@
 {
   "name": "@oarepo/layout-creator",
-  "version": "v0.1.2",
+  "version": "v0.2.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -20,8 +20,8 @@
     "vue-runtime-helpers": "^1.1.2"
   },
   "devDependencies": {
-    "@oarepo/data-editor": "^3.0.0",
-    "@oarepo/data-renderer": "^2.4.5",
+    "@oarepo/data-editor": "^3.1.2",
+    "@oarepo/data-renderer": "^2.4.6",
     "@vue/cli-plugin-babel": "^4.2.0",
     "@vue/cli-plugin-eslint": "^4.2.0",
     "@vue/cli-plugin-router": "^4.2.0",
