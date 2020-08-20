@@ -47,6 +47,9 @@ class SchemaToLayout {
   }
 
   convertObj (path, schema) {
+    if (!schema.properties) {
+      return null
+    }
     if (schema.properties) {
       return {
         prop: path,
@@ -112,6 +115,7 @@ class SchemaToLayout {
   }
 
   convertObjProps (props) {
+    console.log(props)
     return Object.getOwnPropertyNames(props).filter(k => !k.startsWith('__')).map(k => {
       const val = props[k]
       return this.convert(k, val)

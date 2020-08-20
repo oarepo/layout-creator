@@ -25,7 +25,6 @@ export default {
     errorMessage: String
   },
   mounted () {
-    console.log(this.$parent.$parent)
     if (this.initialValue) {
       this.prop = this.initialValue.prop
       this.value = this.initialValue.value
