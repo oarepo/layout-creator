@@ -115,7 +115,6 @@ class SchemaToLayout {
   }
 
   convertObjProps (props) {
-    console.log(props)
     return Object.getOwnPropertyNames(props).filter(k => !k.startsWith('__')).map(k => {
       const val = props[k]
       return this.convert(k, val)
