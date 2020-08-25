@@ -42,6 +42,9 @@ class SchemaToLayout {
         return null
       }
       ret = { ...ret, ...typeLayouts[type] }
+      if (ret.prop === undefined) {
+        return null
+      }
     }
     return ret
   }

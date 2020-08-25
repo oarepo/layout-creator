@@ -1,6 +1,6 @@
 {
   "name": "@oarepo/layout-creator",
-  "version": "v0.2.1",
+  "version": "v0.2.2",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
