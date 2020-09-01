@@ -25,11 +25,27 @@ describe('data editor jsonschema components', () => {
       '    {\n' +
       '      "prop": "lastName",\n' +
       '      "label": {\n' +
-      '        "label": "p"\n' +
+      '        "label": "Last name label"\n' +
       '      }\n' +
       '    },\n' +
       '    {\n' +
       '      "prop": "age"\n' +
+      '    },\n' +
+      '    {\n' +
+      '      "prop": "skills",\n' +
+      '      "children": [\n' +
+      '        {\n' +
+      '          "prop": "python",\n' +
+      '          "children": [\n' +
+      '            {\n' +
+      '              "prop": "experience"\n' +
+      '            },\n' +
+      '            {\n' +
+      '              "prop": "proficiency"\n' +
+      '            }\n' +
+      '          ]\n' +
+      '        }\n' +
+      '      ]\n' +
       '    }\n' +
       '  ],\n' +
       '  "showEmpty": true\n' +

@@ -38,7 +38,7 @@ export default {
             description: 'The person\'s last name.',
             layout: {
               label: {
-                label: 'p'
+                label: 'Last name label'
               }
             }
           },
@@ -50,9 +50,10 @@ export default {
           skills: {
             description: 'Various skills.',
             type: 'object',
-            additionalProperties: {
-              type: 'object',
-              properties: {
+            required: ['python'],
+            properties: {
+              python: {
+                type: 'object',
                 properties: {
                   experience: {
                     type: 'string'
@@ -62,20 +63,6 @@ export default {
                   }
                 }
               }
-            },
-            layout: {
-              additionalProps: {
-                defaultValue: {
-                  python: {
-                    experience: ' 3 months',
-                    proficiency: 'beginner'
-                  }
-                }
-              },
-              children:
-                [{
-                  prop: 'python'
-                }]
             }
           }
         }
