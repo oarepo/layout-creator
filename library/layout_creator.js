@@ -48,7 +48,10 @@ class SchemaToLayout {
 
   convertObj (path, schema) {
     if (!schema.properties) {
-      return null
+      return {
+        prop: path,
+        children: []
+      }
     }
     if (schema.properties) {
       return {
