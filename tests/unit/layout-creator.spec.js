@@ -38,6 +38,13 @@ describe('data editor jsonschema components', () => {
       '          "prop": "python"\n' +
       '        }\n' +
       '      ],\n' +
+      '      "childrenLayout": {\n' +
+      '        "children": [\n' +
+      '          {\n' +
+      '            "prop": "properties"\n' +
+      '          }\n' +
+      '        ]\n' +
+      '      },\n' +
       '      "additionalProps": {\n' +
       '        "defaultValue": {\n' +
       '          "python": {\n' +
@@ -48,6 +55,7 @@ describe('data editor jsonschema components', () => {
       '      }\n' +
       '    }\n' +
       '  ],\n' +
+      '  "childrenLayout": {},\n' +
       '  "showEmpty": true\n' +
       '}')
   })
@@ -68,6 +76,7 @@ describe('data editor jsonschema components', () => {
       '      "item": {}\n' +
       '    }\n' +
       '  ],\n' +
+      '  "childrenLayout": {},\n' +
       '  "showEmpty": true\n' +
       '}')
   })
@@ -89,9 +98,11 @@ describe('data editor jsonschema components', () => {
       '        {\n' +
       '          "prop": "phone"\n' +
       '        }\n' +
-      '      ]\n' +
+      '      ],\n' +
+      '      "childrenLayout": {}\n' +
       '    }\n' +
       '  ],\n' +
+      '  "childrenLayout": {},\n' +
       '  "showEmpty": true\n' +
       '}')
   })

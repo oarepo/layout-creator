@@ -11,7 +11,8 @@ class SchemaToLayout {
     const converted = this.convertInternal(schema, path)
     if (!converted) {
       return converted
-    } return {
+    }
+    return {
       ...converted,
       ...schema.layout || {}
     }
@@ -47,27 +48,24 @@ class SchemaToLayout {
   }
 
   convertObj (path, schema) {
+    const childrenLayout = {}
+    if (schema.additionalProperties) {
+      if (schema.additionalProperties.type === 'object') {
+        childrenLayout.children = this.convertObjProps(schema.additionalProperties.properties)
+      }
+    }
     if (!schema.properties) {
       return {
         prop: path,
-        children: []
+        children: [],
+        childrenLayout: childrenLayout
       }
     }
     if (schema.properties) {
       return {
         prop: path,
-        children: this.convertObjProps(schema.properties)
-      }
-    }
-    if (schema.additionalProperties) {
-      if (schema.additionalProperties.type === 'object') {
-        return {
-          prop: path,
-          children: this.convertObjProps(schema.additionalProperties.properties)
-        }
-      }
-      return {
-        prop: path
+        children: this.convertObjProps(schema.properties),
+        childrenLayout: childrenLayout
       }
     }
   }
@@ -118,7 +116,6 @@ class SchemaToLayout {
   }
 
   convertObjProps (props) {
-    console.log(props)
     return Object.getOwnPropertyNames(props).filter(k => !k.startsWith('__')).map(k => {
       const val = props[k]
       return this.convert(k, val)
